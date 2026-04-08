@@ -261,8 +261,12 @@ let activeLines = new Set(ALL_LINES);
 let currentSort = 'rating';
 let restaurants = RAW.filter(r => r.Restaurants && r.Restaurants.trim() !== '');
 
+function getCuisines(cuisineStr) {
+  return cuisineStr.split(',').map(c => c.trim()).filter(Boolean);
+}
+
 // Populate filters
-const cuisines = [...new Set(restaurants.map(r => r['Cuisine'].trim()))].sort();
+const cuisines = [...new Set(restaurants.flatMap(r => getCuisines(r['Cuisine'])))].sort();
 const neighborhoods = [...new Set(restaurants.map(r => r['Neighborhood']))].sort();
 const cuisineEl = document.getElementById('cuisineFilter');
 const nbrEl = document.getElementById('neighborhoodFilter');
@@ -313,7 +317,7 @@ function getFiltered() {
     const lines = getLines(r['L Line [Train]']);
     const hasLine = r['L Line [Train]'] === 'Varies' || lines.some(l => activeLines.has(l)) || lines.length === 0;
     if (!hasLine) return false;
-    if (cuisine && r['Cuisine'].trim() !== cuisine) return false;
+    if (cuisine && !getCuisines(r['Cuisine']).includes(cuisine)) return false;
     if (nbr && r['Neighborhood'] !== nbr) return false;
     if (meal && !r['Meals'].toLowerCase().includes(meal.toLowerCase())) return false;
     if (q && !r['Restaurants'].toLowerCase().includes(q) &&
@@ -369,6 +373,7 @@ function render() {
     const comment = r['Comments by Louis Sungwoo Cho'];
     const showComment = comment && comment !== 'TBD' && comment.length > 3;
     const price = getPriceLabel(r['Price $']);
+    const cuisineTags = getCuisines(r['Cuisine']).map(c => `<span class="meta-tag cuisine">${c}</span>`).join('');
 
     return `<div class="card" onclick="openModal(${r.Index})">
       <div class="card-accent-bar" style="${buildAccentGradient(r['L Line [Train]'])}"></div>
@@ -380,7 +385,7 @@ function render() {
         </div>
       </div>
       <div class="card-meta">
-        <span class="meta-tag cuisine">${r['Cuisine']}</span>
+        ${cuisineTags}
         <span class="meta-tag price">${price}</span>
       </div>
       <div class="card-station">
@@ -422,7 +427,7 @@ function openModal(idx) {
   document.getElementById('modalBody').innerHTML = `
     <div class="modal-row">
       <div class="modal-field"><div class="modal-label">Neighborhood</div><div class="modal-value">${r['Neighborhood']}</div></div>
-      <div class="modal-field"><div class="modal-label">Cuisine</div><div class="modal-value">${r['Cuisine']}</div></div>
+      <div class="modal-field"><div class="modal-label">Cuisine</div><div class="modal-value" style="display:flex;flex-wrap:wrap;gap:5px;margin-top:4px">${getCuisines(r['Cuisine']).map(c => `<span class="meta-tag cuisine" style="font-size:0.75rem">${c}</span>`).join('')}</div></div>
     </div>
     <div class="modal-row">
       <div class="modal-field"><div class="modal-label">Rating</div><div class="modal-value" style="color:${isNaN(rating)?'#888':getRatingColor(rating)};font-family:'Space Mono',monospace;font-size:1.3rem;font-weight:700">${ratingStr}</div></div>

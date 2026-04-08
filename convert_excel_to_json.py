@@ -16,7 +16,6 @@ bak_df = bak_df.rename(columns={'Bakery/Café': 'Restaurants'})
 # 3. Combine them
 combined_df = pd.concat([res_df, bak_df], ignore_index=True)
 
-combined_df = res_df
 
 # 4. Final Cleanup
 combined_df = combined_df.fillna('') # Critical for preventing .toLowerCase() crashes

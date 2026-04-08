@@ -234,21 +234,26 @@ const LINE_COLORS = {
 const ALL_LINES = ['Red','Blue','Brown','Green','Orange','Purple','Pink'];
 
 // Replace the hardcoded const RAW = [...] with this:
-window.onload = loadData;
-let RAW = [];
+let RAW = []; 
 
 async function loadData() {
   try {
     const response = await fetch('combined_restaurants.json');
+    if (!response.ok) throw new Error("Failed to load JSON");
+    
     RAW = await response.json();
     
-    // Call your existing render functions here after data is loaded
+    // Now that RAW is full of data, we can start the site logic
     render(); 
     updateStats();
   } catch (error) {
     console.error("Error loading restaurant data:", error);
+    // Optional: show a message on the screen if the file is missing
   }
 }
+
+window.onload = loadData;
+
 
 // Call the function when the page loads
 // window.onload = loadData;

@@ -67,6 +67,8 @@ function getLines(str) {
   return ALL_LINES.filter(l => String(str).includes(l));
 }
 
+ 
+
 function getConnectors(str) {
   if (!str) return [];
   return Object.keys(CONNECTOR_PATTERNS).filter(k => CONNECTOR_PATTERNS[k].test(str));
@@ -349,22 +351,57 @@ function closeSurpriseDirectly() { document.getElementById('surpriseOverlay').cl
 
 // Add your own photos by updating src values below.
 // If src is blank or fails to load, a styled placeholder is shown.
+
+  // { src: './photos/gene_georgetti4.jpg', name: 'Gene & Georgetti', caption: 'Fresh sorbet to finish off!', neighborhood: 'River North', line: 'Brown', cuisine: 'Italian' },
+  
+
+  // Only Display 5 Star Items otherwise it's going to be too much
+
 const GALLERY_SLIDES = [
   { src: './photos/gene_georgetti1.jpg', name: 'Gene & Georgetti', caption: 'The perfect steak meal — a Chicago institution since 1941. Fresh bread to kick off a legendary dinner.', neighborhood: 'River North', line: 'Brown', cuisine: 'Italian' },
   { src: './photos/gene_georgetti2.jpg', name: 'Gene & Georgetti', caption: 'Classic Italian antipasto — simple, fresh, perfect salad!', neighborhood: 'River North', line: 'Brown', cuisine: 'Italian' },
   { src: './photos/gene_georgetti3.jpg', name: 'Gene & Georgetti', caption: 'The steak itself. Worth every single penny.', neighborhood: 'River North', line: 'Brown', cuisine: 'Italian' },
   { src: './photos/gene_georgetti4.jpg', name: 'Gene & Georgetti', caption: 'Fresh sorbet to finish off!', neighborhood: 'River North', line: 'Brown', cuisine: 'Italian' },
-  { src: './photos/chosun1.jpg',         name: 'Cho Sun Ok',       caption: 'Most traditional Korean restaurant in Chicago. Reminding Seoul and Korean BBQ!', neighborhood: 'Wicker Park', line: 'Blue', cuisine: 'Korean' },
+
+  { src: './photos/carmines1.jpg', name: 'Carmines', caption: 'Fresh authentic Italian pasta!', neighborhood: 'River North', line: 'Red', cuisine: 'Italian' },
+  { src: './photos/luxbar1.jpg', name: 'Luxbar', caption: 'Steak and Eggs brunch you will never forget!', neighborhood: 'Near North Side', line: 'Red', cuisine: 'American' },
+  
+  { src: './photos/roanoke1.jpg', name: 'Roanoke',     caption: 'Steak and Eggs is a great way to finish off your business meeting!', neighborhood: 'Loop',  line: 'Red',   cuisine: 'American' },
+  { src: './photos/roanoke2.jpg', name: 'Roanoke',     caption: 'Steak and Eggs is a great way to finish off your business meeting!', neighborhood: 'Loop',  line: 'Blue',   cuisine: 'American' },
+  { src: './photos/roanoke3.jpg', name: 'Roanoke',     caption: 'Fresh salads are nice too!', neighborhood: 'Loop',  line: 'Brown',   cuisine: 'American' },
+  { src: './photos/roanoke4.jpg', name: 'Roanoke',     caption: 'Sorbet at last!', neighborhood: 'Loop',  line: 'Orange',   cuisine: 'American' },
+  
+  { src: './photos/exchequer1.jpg', name: 'Exchequer',     caption: '$31.00 Filet Mignon? That is dope!', neighborhood: 'Loop',  line: 'Red',   cuisine: 'American' },
+
+  
+  { src: './photos/brunchery1.jpg', name: 'The Brunchery',     caption: 'Amazing Steak & Eggs Brunch on Clark Street.', neighborhood: 'Lincoln Park',  line: 'Red',   cuisine: 'American' },
+
+
+
+  { src: './photos/eataly_pizza1.jpg', name: 'Eataly Chicago',    caption: 'Authentic Neopolitan-style pizza? You definitely should be here!',   neighborhood: 'River North',   line: 'Red',   cuisine: 'Italian' },
+  { src: './photos/eataly_pizza2.jpg', name: 'Eataly Chicago',    caption: 'Authentic Neopolitan-style pizza? You definitely should be here!',   neighborhood: 'River North',   line: 'Red',   cuisine: 'Italian' },
+  { src: './photos/eataly_pizza3.jpg', name: 'Eataly Chicago',    caption: 'Authentic Neopolitan-style pizza? You definitely should be here!',   neighborhood: 'River North',   line: 'Red',   cuisine: 'Italian' },
+  { src: './photos/eataly_pizza4.jpg', name: 'Eataly Chicago',    caption: 'Authentic Neopolitan-style pizza? You definitely should be here!',   neighborhood: 'River North',   line: 'Red',   cuisine: 'Italian' },
+  { src: './photos/eataly_gel1.jpg', name: 'Eataly Chicago',    caption: 'Finish off with cool gelato or sorbetto!',   neighborhood: 'River North',   line: 'Red',   cuisine: 'Italian' },
+  
+  { src: './photos/hawksmoor1.jpg', name: 'Hawksmoor Chicago', caption: 'Steak Frites on Monday–Saturday nights. Unmissable.',          neighborhood: 'River North',   line: 'Brown', cuisine: 'English' },
+
+
+  { src: './photos/vu_rooftop1.jpg', name: 'VU Rooftop',        caption: 'Korean-style skirt steak with a view of the South Loop.',        neighborhood: 'South Loop',    line: 'Green', cuisine: 'American' },
+
+
+  { src: './photos/chosun1.jpg',         name: 'Cho Sun Ok',       caption: 'Most traditional Korean restaurant in Chicago. Reminding Seoul and Korean BBQ!', neighborhood: 'Lincoln Square', line: 'Brown', cuisine: 'Korean' },
+  { src: './photos/chosun2.jpg',         name: 'Cho Sun Ok',       caption: 'Finish your meal with Cold Noodles (냉면)!', neighborhood: 'Lincoln Square', line: 'Brown', cuisine: 'Korean' },
+
+
   { src: './photos/daebak1.jpg',         name: 'Daebak Korean BBQ', caption: 'Best authentic Korean BBQ in Chicago. Worth every penny.', neighborhood: 'Wicker Park', line: 'Blue', cuisine: 'Korean' },
-  { src: './photos/daebak2.jpg',         name: 'Daebak Korean BBQ', caption: 'Best authentic Korean BBQ in Chicago. Worth every penny.', neighborhood: 'Wicker Park', line: 'Blue', cuisine: 'Korean' },
-  { src: './photos/daebak3.jpg',         name: 'Daebak Korean BBQ', caption: 'Best authentic Korean BBQ in Chicago. Worth every penny.', neighborhood: 'Wicker Park', line: 'Blue', cuisine: 'Korean' },
-  { src: './photos/daebak4.jpg',         name: 'Daebak Korean BBQ', caption: 'Best authentic Korean BBQ in Chicago. Worth every penny.', neighborhood: 'Wicker Park', line: 'Blue', cuisine: 'Korean' },
-  { src: '', name: 'The Brunchery',     caption: 'Amazing Steak & Eggs Brunch on Clark Street.',                   neighborhood: 'Lincoln Park',  line: 'Red',   cuisine: 'American' },
-  { src: '', name: 'VU Rooftop',        caption: 'Korean-style skirt steak with a view of the South Loop.',        neighborhood: 'South Loop',    line: 'Green', cuisine: 'American' },
-  { src: '', name: 'Eataly Chicago',    caption: 'Amazing authentic Italian pizza in the heart of River North.',   neighborhood: 'River North',   line: 'Red',   cuisine: 'Italian' },
-  { src: '', name: 'Benihana',          caption: 'Teppanyaki theater — large portions, even larger fun.',          neighborhood: 'River North',   line: 'Red',   cuisine: 'Japanese' },
-  { src: '', name: 'PINK MU',           caption: 'Best authentic Korean-style Kimbap in the city.',               neighborhood: 'River North',   line: 'Red',   cuisine: 'Korean' },
-  { src: '', name: 'Hawksmoor Chicago', caption: 'Steak Frites on Tuesday–Saturday nights. Unmissable.',          neighborhood: 'River North',   line: 'Brown', cuisine: 'English' }
+  { src: './photos/daebak2.jpg',         name: 'Daebak Korean BBQ', caption: 'Devouring Chadol Bagi (차돌바기).', neighborhood: 'Wicker Park', line: 'Blue', cuisine: 'Korean' },
+  { src: './photos/daebak3.jpg',         name: 'Daebak Korean BBQ', caption: 'Your mouth cannot wait for Korean BBQ', neighborhood: 'Wicker Park', line: 'Blue', cuisine: 'Korean' },
+  { src: './photos/daebak4.jpg',         name: 'Daebak Korean BBQ', caption: 'Finish off with marinated Galbi (양념갈비).', neighborhood: 'Wicker Park', line: 'Blue', cuisine: 'Korean' },
+  
+   
+ 
+
 ];
 
 const LINE_COLORS_GALLERY = {

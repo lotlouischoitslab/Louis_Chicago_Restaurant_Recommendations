@@ -365,7 +365,11 @@ const GALLERY_SLIDES = [
 
   { src: './photos/carmines1.jpg', name: 'Carmines', caption: 'Fresh authentic Italian pasta!', neighborhood: 'River North', line: 'Red', cuisine: 'Italian' },
   { src: './photos/luxbar1.jpg', name: 'Luxbar', caption: 'Steak and Eggs brunch you will never forget!', neighborhood: 'Near North Side', line: 'Red', cuisine: 'American' },
+  { src: './photos/tavern_rush1.jpg', name: 'Tavern on Rush', caption: 'Crispy Steak Frites!', neighborhood: 'Near North Side', line: 'Red', cuisine: 'American' },
   
+  { src: './photos/tavern_rush1.jpg', name: 'Charlie Martin', caption: 'Cool Shrimp Cocktail!', neighborhood: 'River North', line: 'Red', cuisine: 'American' },
+  { src: './photos/tavern_rush2.jpg', name: 'Charlie Martin', caption: 'Crispy Steak Frites!', neighborhood: 'River North', line: 'Red', cuisine: 'American' },
+
   { src: './photos/roanoke1.jpg', name: 'Roanoke',     caption: 'Steak and Eggs is a great way to finish off your business meeting!', neighborhood: 'Loop',  line: 'Red',   cuisine: 'American' },
   { src: './photos/roanoke2.jpg', name: 'Roanoke',     caption: 'Steak and Eggs is a great way to finish off your business meeting!', neighborhood: 'Loop',  line: 'Blue',   cuisine: 'American' },
   { src: './photos/roanoke3.jpg', name: 'Roanoke',     caption: 'Fresh salads are nice too!', neighborhood: 'Loop',  line: 'Brown',   cuisine: 'American' },
@@ -400,7 +404,8 @@ const GALLERY_SLIDES = [
   { src: './photos/daebak4.jpg',         name: 'Daebak Korean BBQ', caption: 'Finish off with marinated Galbi (양념갈비).', neighborhood: 'Wicker Park', line: 'Blue', cuisine: 'Korean' },
   
    
- 
+  { src: './photos/perilla1.jpg', name: 'Perilla',     caption: '$Fusion Korean American Steakhouse you do not want to miss!', neighborhood: 'Loop',  line: 'Brown',   cuisine: 'American' },
+
 
 ];
 

@@ -363,6 +363,10 @@ const GALLERY_SLIDES = [
   { src: './photos/gene_georgetti3.jpg', name: 'Gene & Georgetti', caption: 'The steak itself. Worth every single penny.', neighborhood: 'River North', line: 'Brown', cuisine: 'Italian' },
   { src: './photos/gene_georgetti4.jpg', name: 'Gene & Georgetti', caption: 'Fresh sorbet to finish off!', neighborhood: 'River North', line: 'Brown', cuisine: 'Italian' },
 
+  { src: './photos/sweet_water1.jpg', name: 'Sweet Water Tavern and Grill', caption: 'Devouring dishes you want to order every item', neighborhood: 'Loop', line: 'Brown', cuisine: 'Italian' },
+
+
+
   { src: './photos/carmines1.jpg', name: 'Carmines', caption: 'Fresh authentic Italian pasta!', neighborhood: 'River North', line: 'Red', cuisine: 'Italian' },
   { src: './photos/luxbar1.jpg', name: 'Luxbar', caption: 'Steak and Eggs brunch you will never forget!', neighborhood: 'Near North Side', line: 'Red', cuisine: 'American' },
   { src: './photos/tavern_rush1.jpg', name: 'Tavern on Rush', caption: 'Crispy Steak Frites!', neighborhood: 'Near North Side', line: 'Red', cuisine: 'American' },
